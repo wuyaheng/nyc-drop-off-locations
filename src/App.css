@@ -1,0 +1,24 @@
+nav {
+  justify-content: center !important;
+}
+
+#mapid {
+  height: 90vh;
+}
+
+#map-container {
+  height: 90vh;
+}
+
+button:focus,
+button:hover,
+input:focus,
+input:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.leaflet-tooltip{
+  width: 250px !important;
+  white-space: normal !important;
+}
