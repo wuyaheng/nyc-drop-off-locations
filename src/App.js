@@ -6,8 +6,10 @@ import "./App.css";
 class App extends Component {
   state = {
     sel_zipCode: "",
-    results: [],
-    filtered: [],
+    textile: [],
+    foodScrap: [],
+    electronics: [],
+    pharmaceutical: []
   };
 
   componentDidMount() {
@@ -21,14 +23,13 @@ class App extends Component {
 
   searchTextile = async () => {
     const res = await axios.get(
-      `https://data.cityofnewyork.us/resource/qnjm-wvu5.json`,
+      `https://data.cityofnewyork.us/resource/qnjm-wvu5.json`, 
       {
         params: {
           zipcode: this.state.sel_zipCode
         },
       }
     );
-    console.log(res)
     let onlyValidTextile = res.data.filter(item => {
       let { latitude, longitude } = item;
       let lat = parseFloat(latitude);
@@ -39,9 +40,79 @@ class App extends Component {
       return false;
     })
     this.setState({
-      filtered: onlyValidTextile, 
+      textile: onlyValidTextile
     });
+  };
 
+
+  searchFoodScrap = async () => {
+    const res = await axios.get(
+      `https://data.cityofnewyork.us/resource/if26-z6xq.json`, 
+      {
+        params: {
+          zipcode: this.state.sel_zipCode
+        },
+      }
+    );
+    let onlyValidFoodScrap = res.data.filter(item => {
+      let { latitude, longitude } = item;
+      let lat = parseFloat(latitude);
+      let lon = parseFloat(longitude);
+      if (this.isFloat(lat) && this.isFloat(lon)) {
+        return true
+      }
+      return false;
+    })
+    this.setState({
+      foodScrap: onlyValidFoodScrap
+    });
+  };
+
+
+  searchElectronics = async () => {
+    const res = await axios.get(
+      `https://data.cityofnewyork.us/resource/wshr-5vic.json`, 
+      {
+        params: {
+          zipcode: this.state.sel_zipCode
+        },
+      }
+    );
+    let onlyValidElectronics = res.data.filter(item => {
+      let { latitude, longitude } = item;
+      let lat = parseFloat(latitude);
+      let lon = parseFloat(longitude);
+      if (this.isFloat(lat) && this.isFloat(lon)) {
+        return true
+      }
+      return false;
+    })
+    this.setState({
+      electronics: onlyValidElectronics
+    });
+  };
+
+  searchPharmaceutical = async () => {
+    const res = await axios.get(
+      `https://data.cityofnewyork.us/resource/edk2-vkjh.json`, 
+      {
+        params: {
+          zipcode: this.state.sel_zipCode
+        },
+      }
+    );
+    let onlyValidPharmaceutical = res.data.filter(item => {
+      let { latitude, longitude } = item;
+      let lat = parseFloat(latitude);
+      let lon = parseFloat(longitude);
+      if (this.isFloat(lat) && this.isFloat(lon)) {
+        return true
+      }
+      return false;
+    })
+    this.setState({
+      pharmaceutical: onlyValidPharmaceutical
+    });
   };
 
   isFloat = (n) => {
@@ -83,7 +154,7 @@ class App extends Component {
           <div className="row">
           <div className="col-md-12">
               <div className="card">
-                <MapBox results={this.state.filtered} />
+                <MapBox results={this.state.textile} /> 
               </div>
             </div>
           </div>
