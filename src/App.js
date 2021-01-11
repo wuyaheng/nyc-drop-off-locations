@@ -9,7 +9,8 @@ class App extends Component {
     textile: [],
     foodScrap: [],
     electronics: [],
-    pharmaceutical: []
+    pharmaceutical: [],
+    leaf: []
   };
 
   componentDidMount() {
@@ -112,6 +113,29 @@ class App extends Component {
     })
     this.setState({
       pharmaceutical: onlyValidPharmaceutical
+    });
+  };
+
+  searchLeaf = async () => {
+    const res = await axios.get(
+      `https://data.cityofnewyork.us/resource/8i9k-4gi5.json`, 
+      {
+        params: {
+          zipcode: this.state.sel_zipCode
+        },
+      }
+    );
+    let onlyValidLeaf = res.data.filter(item => {
+      let { latitude, longitude } = item;
+      let lat = parseFloat(latitude);
+      let lon = parseFloat(longitude);
+      if (this.isFloat(lat) && this.isFloat(lon)) {
+        return true
+      }
+      return false;
+    })
+    this.setState({
+      leaf: onlyValidLeaf
     });
   };
 
