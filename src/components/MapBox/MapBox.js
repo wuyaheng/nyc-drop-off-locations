@@ -16,7 +16,7 @@ function MapBox(props) {
 
   return (
     <>
-      <Map lat={lat} lon={lon} pins={props.results} />
+      <Map lat={lat} lon={lon} results={props.results} />
     </>
   );
 }

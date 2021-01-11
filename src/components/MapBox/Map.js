@@ -5,7 +5,7 @@ export default (props) => {
   React.useEffect(() => {
     const MAP_CONTAINER = document.getElementById("map-container");
 
-    if (props.lat && props.lon && props.pins) {
+    if (props.lat && props.lon && props.results) { 
       const MAP_ID = document.createElement("div");
       MAP_ID.setAttribute("id", "mapid");
       MAP_CONTAINER.appendChild(MAP_ID);
@@ -24,11 +24,11 @@ export default (props) => {
           accessToken: process.env.REACT_APP_MAP_API_KEY,
         }
       ).addTo(mymap);
-      props.pins.forEach((pin) => L.marker([pin.latitude, pin.longitude]).addTo(mymap).bindTooltip("hi"));
+      props.results.textile.forEach((pin) => L.marker([pin.latitude, pin.longitude]).addTo(mymap).bindTooltip("<p>" + pin.ntaname + "</p>"));
     }
 
     return () => (MAP_CONTAINER.innerHTML = "");
   }, [props.lat, props.lon, props.pins]);
 
-  return <div id="map-container"></div>;
+  return <div id="map-container"></div>; 
 };

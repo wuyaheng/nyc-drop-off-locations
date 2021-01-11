@@ -55,7 +55,7 @@ class App extends Component {
       `https://data.cityofnewyork.us/resource/if26-z6xq.json`, 
       {
         params: {
-          zipcode: this.state.sel_zipCode
+          zip_code: this.state.sel_zipCode
         },
       }
     );
@@ -153,16 +153,23 @@ class App extends Component {
       {
       sel_zipCode: event.target.value,
       },
-      this.searchTextile,
-      this.searchFoodScrap,
-      this.searchElectronics,
-      this.searchPharmaceutical,
-      this.searchLeaf 
+      () => {
+        this.searchTextile()
+        this.searchFoodScrap()
+        this.searchElectronics()
+        this.searchPharmaceutical()
+        this.searchLeaf()
+      }
       );
   };
 
 
   render() {
+    const {  textile,
+      foodScrap,
+      electronics,
+      pharmaceutical,
+      leaf } = this.state;
     return (
       <>
         <nav className="navbar navbar-light bg-dark">
@@ -186,7 +193,7 @@ class App extends Component {
           <div className="row">
           <div className="col-md-12">
               <div className="card">
-                <MapBox results={this.state.textile} /> 
+                <MapBox results={{ textile, foodScrap, electronics, pharmaceutical, leaf }} /> 
               </div>
             </div>
           </div>
