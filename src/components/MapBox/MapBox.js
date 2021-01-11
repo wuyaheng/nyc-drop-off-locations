@@ -2,7 +2,6 @@ import React from "react";
 import Map from "./Map";
 
 function MapBox(props) {
-  console.log(props)
   const lat = props.results.reduce((t, r) => {
     let lat = r.latitude
     let parsedLat = parseFloat(lat)

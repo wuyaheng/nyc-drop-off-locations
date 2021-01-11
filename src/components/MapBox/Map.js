@@ -4,7 +4,6 @@ import L from "leaflet";
 export default (props) => {
   React.useEffect(() => {
     const MAP_CONTAINER = document.getElementById("map-container");
-    console.log(props.pins) 
 
     if (props.lat && props.lon && props.pins) {
       const MAP_ID = document.createElement("div");

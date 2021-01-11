@@ -18,7 +18,11 @@ class App extends Component {
       {
         sel_zipCode: "10010"
       },
-      this.searchTextile
+      this.searchTextile,
+      this.searchFoodScrap,
+      this.searchElectronics,
+      this.searchPharmaceutical,
+      this.searchLeaf 
     );
   }
 
@@ -149,7 +153,11 @@ class App extends Component {
       {
       sel_zipCode: event.target.value,
       },
-      this.searchTextile
+      this.searchTextile,
+      this.searchFoodScrap,
+      this.searchElectronics,
+      this.searchPharmaceutical,
+      this.searchLeaf 
       );
   };
 
@@ -165,12 +173,12 @@ class App extends Component {
         <div className="container-fluid mt-2">
           <div className="row">
             <div className="col-md-12">
-            <label for="form-control"><h5 className="pb-0 mb-0">Enter Another Zip Code Below</h5></label>
-            <div class="input-group mb-2">
-              <input type="text" class="form-control" value={this.state.sel_zipCode} onChange={this.handleChange} 
+            <label htmlFor="form-control"><h5 className="pb-0 mb-0">Enter Another Zip Code Below</h5></label>
+            <div className="input-group mb-2">
+              <input type="text" className="form-control" value={this.state.sel_zipCode} onChange={this.handleChange} 
                     placeholder="Enter Another Zip Code" aria-label="Enter Another Zip Code" aria-describedby="basic-addon2"/>
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Go!</button>
+              <div className="input-group-append">
+                <button className="btn btn-outline-secondary" type="button">Go!</button>
               </div>
             </div>
             </div>
