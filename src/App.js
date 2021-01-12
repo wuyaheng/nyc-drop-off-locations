@@ -18,11 +18,13 @@ class App extends Component {
       {
         sel_zipCode: "10010"
       },
-      this.searchTextile,
-      this.searchFoodScrap,
-      this.searchElectronics,
-      this.searchPharmaceutical,
-      this.searchLeaf 
+      () => {
+        this.searchTextile()
+        this.searchFoodScrap()
+        this.searchElectronics()
+        this.searchPharmaceutical()
+        this.searchLeaf()
+      }
     );
   }
 
