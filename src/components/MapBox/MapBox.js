@@ -65,11 +65,26 @@ function MapBox(props) {
     return t + leaf_parsedLon
   },0)/leaf.length;  
 
-  console.log(textile_lat, textile_lon, foodScrap_lat, foodScrap_lon, electronics_lat, electronics_lon, pharmaceutical_lat, pharmaceutical_lon, leaf_lat, leaf_lon)
+  if(isFinite(textile_lat) && isFinite(textile_lon)) {
+    var lat = textile_lat;
+    var lon = textile_lon;
+  } else if (isFinite(foodScrap_lat) && isFinite(foodScrap_lon)) {
+    var lat = foodScrap_lat;
+    var lon = foodScrap_lon; 
+  } else if (isFinite(electronics_lat) && isFinite(electronics_lon)) {
+    var lat = electronics_lat;
+    var lon = electronics_lon; 
+  } else if (isFinite(pharmaceutical_lat) && isFinite(pharmaceutical_lon)) {
+    var lat = pharmaceutical_lat;
+    var lon = pharmaceutical_lon; 
+  } else {
+    var lat = leaf_lat;
+    var lon = leaf_lon; 
+  }
   
   return (
     <>
-      {/* <Map lat={lat} lon={lon} results={props.results} /> */}
+      <Map lat={lat} lon={lon} results={props.results} />
     </>
   );
 }
