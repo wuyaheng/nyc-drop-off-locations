@@ -2,18 +2,23 @@ import React from "react";
 import Map from "./Map";
 
 function MapBox(props) {
-  console.log(props)
-  // const lat = props.results.reduce((t, r) => {
-  //   let lat = r.latitude
-  //   let parsedLat = parseFloat(lat)
-  //   return t + parsedLat
-  // },0)/props.results.length;
 
-  //   const lon = props.results.reduce((t, r) => {
-  //     let lon = r.longitude
-  //     let parsedLon = parseFloat(lon)
-  //     return t + parsedLon
-  //   },0)/props.results.length;
+  let { textile, foodScrap, electronics, pharmaceutical, leaf } = props.results;
+
+  const textile_lat = textile.reduce((t, r) => {
+    let textile_lat = r.latitude
+    let textile_parsedLat = parseFloat(textile_lat)
+    return t + textile_parsedLat
+  },0)/textile.length; 
+
+    const textile_lon = textile.reduce((t, r) => {
+      let textile_lon = r.longitude
+      let textile_parsedLon = parseFloat(textile_lon)
+      return t + textile_parsedLon
+    },0)/textile.length;
+
+    console.log(textile_lat)
+    console.log(textile_lon) 
 
   return (
     <>
