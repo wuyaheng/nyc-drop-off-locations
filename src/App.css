@@ -76,3 +76,9 @@ p {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.legendIcon {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 0.5em 0.5em;
+}
+

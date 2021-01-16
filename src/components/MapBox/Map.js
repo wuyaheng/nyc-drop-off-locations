@@ -27,7 +27,7 @@ export default (props) => {
 
       var iconTextile = L.divIcon({
 				className: 'custom-div-icon',
-        html: "<div style='background-color:#4281a4;' class='marker-pin'></div><i class='fa fa-tshirt awesome'>",
+        html: "<div style='background-color:#4281a4;' class='marker-pin'></div><i class='fa fa-tshirt awesome'>", 
         iconSize: [30, 42],
         iconAnchor: [15, 42]
     });
@@ -69,11 +69,11 @@ export default (props) => {
       info.onAdd = function() {
         var div = L.DomUtil.create("div", "legend");
         div.innerHTML += "<p><b>Drop-Off Categories</b></p>"
-        div.innerHTML += "<p><i class='fa fa-leaf awesome'>  Leaf</p>"; 
-        div.innerHTML += "<p><i class='fa fa-tshirt awesome'>  Textile</p>"; 
-        div.innerHTML += "<p><i class='fa fa-charging-station awesome'>  Electronics</p>";
-        div.innerHTML += "<p><i class='fa fa-utensils awesome'>  Food Scrap</p>";  
-        div.innerHTML += "<p><i class='fa fa-capsules awesome'>  Pharmaceutical</p>";
+        div.innerHTML += "<i class='fa fa-leaf awesome legendIcon'></i>Leaf<br/>"; 
+        div.innerHTML += "<i class='fa fa-tshirt awesome legendIcon'></i>Textile<br/>"; 
+        div.innerHTML += "<i class='fa fa-charging-station awesome legendIcon'></i>Electronics<br/>";
+        div.innerHTML += "<i class='fa fa-utensils awesome legendIcon'></i>Food Scrap<br/>";  
+        div.innerHTML += "<i class='fa fa-capsules awesome legendIcon'></i>Pharmaceutical<br/>";
         return div;
       };
       // Add the info legend to the map
