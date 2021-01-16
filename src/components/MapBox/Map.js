@@ -25,7 +25,6 @@ export default (props) => {
         }
       ).addTo(mymap);
 
-
       var iconTextile = L.divIcon({
 				className: 'custom-div-icon',
         html: "<div style='background-color:#4281a4;' class='marker-pin'></div><i class='fa fa-tshirt awesome'>",
@@ -61,6 +60,24 @@ export default (props) => {
     iconAnchor: [15, 42]
 });
 
+      // Create a legend to display information about our map
+      var info = L.control({
+        position: "bottomright"
+      });
+
+      // When the layer control is added, insert a div with the class of "legend"
+      info.onAdd = function() {
+        var div = L.DomUtil.create("div", "legend");
+        div.innerHTML += "<p><b>Drop-Off Categories</b></p>"
+        div.innerHTML += "<p><i class='fa fa-leaf awesome'>  Leaf</p>"; 
+        div.innerHTML += "<p><i class='fa fa-tshirt awesome'>  Textile</p>"; 
+        div.innerHTML += "<p><i class='fa fa-charging-station awesome'>  Electronics</p>";
+        div.innerHTML += "<p><i class='fa fa-utensils awesome'>  Food Scrap</p>";  
+        div.innerHTML += "<p><i class='fa fa-capsules awesome'>  Pharmaceutical</p>";
+        return div;
+      };
+      // Add the info legend to the map
+      info.addTo(mymap);
 
       props.results.textile.forEach((pin) => L.marker([pin.latitude, pin.longitude],{icon: iconTextile}).addTo(mymap).bindTooltip("<h6>Textile Drop-Off Location</h6><p><b>Name:</b> " + pin.vendor_name + "</p><p><b>Items Accepted:</b> " + pin.items_accepted + "</p><p><b>Phone:</b> " + pin.public_phone + "</p><p><b>Email:</b> " + pin.public_email + "</p><p><b>Address:</b> " + pin.address + ", New York, NY" + pin.zipcode + "</p>"));
       props.results.foodScrap.forEach((pin) => L.marker([pin.latitude, pin.longitude],{icon: iconfoodScrap}).addTo(mymap).bindTooltip("<h6>Food Scrap Drop-Off Location</h6><p><b>Name:</b> " + pin.food_scrap_drop_off_site + "</p><p><b>Website:</b> " + pin.website + "</p><p><b>Address:</b> " + pin.location + "</p>"));
