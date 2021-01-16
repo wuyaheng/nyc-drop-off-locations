@@ -3,11 +3,11 @@ nav {
 }
 
 #mapid {
-  height: 90vh;
+  height: 80vh;
 }
 
 #map-container {
-  height: 90vh;
+  height: 80vh;
 }
 
 button:focus,
@@ -19,6 +19,11 @@ input:hover {
 }
 
 .leaflet-tooltip{
-  width: 250px !important;
+  width: 300px !important;
   white-space: normal !important;
+}
+
+p {
+  padding: 0 !important;
+  margin: 0 !important;
 }
