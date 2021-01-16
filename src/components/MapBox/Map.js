@@ -25,6 +25,28 @@ export default (props) => {
         }
       ).addTo(mymap);
 
+      // Initialize all of the LayerGroups we'll be using
+      var layers = {
+        Leaf: new L.LayerGroup(),
+        Textile: new L.LayerGroup(),
+        Electronics: new L.LayerGroup(), 
+        FoodScrap: new L.LayerGroup(),
+        Pharmaceutical: new L.LayerGroup()
+      };
+
+      // Create an overlays object to add to the layer control
+      var overlays = {
+        "Leaf": layers.Leaf, 
+        "Textile": layers.Textile,
+        "Electronics": layers.Electronics,
+        "FoodScrap": layers.FoodScrap,
+        "Pharmaceutical": layers.Pharmaceutical 
+      };
+
+      // Create a control for our layers, add our overlay layers to it
+      L.control.layers(null, overlays).addTo(mymap);
+      // L.control.layers(null, overlays, {collapsed:false}).addTo(mymap);
+
       var iconTextile = L.divIcon({
 				className: 'custom-div-icon',
         html: "<div style='background-color:#4281a4;' class='marker-pin'></div><i class='fa fa-tshirt awesome'>", 
