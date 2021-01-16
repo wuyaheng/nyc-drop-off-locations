@@ -78,7 +78,7 @@ export default (props) => {
     }
 
     return () => (MAP_CONTAINER.innerHTML = ""); 
-  }, [props.lat, props.lon, props.pins]);
+  }, [props.lat, props.lon, props.results]);
 
   return <div id="map-container"></div>; 
 }
