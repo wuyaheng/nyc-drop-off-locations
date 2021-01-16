@@ -35,21 +35,21 @@ export default (props) => {
 
       var iconfoodScrap = L.divIcon({
         className: 'custom-div-icon',
-        html: "<div style='background-color:#5e6572;' class='marker-pin'></div><i class='fa fa-utensils awesome'>", 
+        html: "<div style='background-color:#b2967d;' class='marker-pin'></div><i class='fa fa-utensils awesome'>", 
         iconSize: [30, 42],
         iconAnchor: [15, 42]
     });
 
       var iconElectronics = L.divIcon({
         className: 'custom-div-icon',
-        html: "<div style='background-color:#8c2f39;' class='marker-pin'></div><i class='fa fa-charging-station awesome'>", 
+        html: "<div style='background-color:#d80032;' class='marker-pin'></div><i class='fa fa-charging-station awesome'>", 
         iconSize: [30, 42], 
         iconAnchor: [15, 42]
     });
 
     var iconPharmaceutical = L.divIcon({
       className: 'custom-div-icon',
-      html: "<div style='background-color:#f38375;' class='marker-pin'></div><i class='fa fa-capsules awesome'>", 
+      html: "<div style='background-color:#ff7900;' class='marker-pin'></div><i class='fa fa-capsules awesome'>", 
       iconSize: [30, 42], 
       iconAnchor: [15, 42]
   });
