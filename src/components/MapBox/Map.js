@@ -49,7 +49,7 @@ export default (props) => {
 
     var iconPharmaceutical = L.divIcon({
       className: 'custom-div-icon',
-      html: "<div style='background-color:#ff7900;' class='marker-pin'></div><i class='fa fa-capsules awesome'>", 
+      html: "<div style='background-color:#f4acb7;' class='marker-pin'></div><i class='fa fa-capsules awesome'>", 
       iconSize: [30, 42], 
       iconAnchor: [15, 42]
   });
