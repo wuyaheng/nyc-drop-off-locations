@@ -16,7 +16,7 @@ class App extends Component {
   componentDidMount() {
     this.setState(
       {
-        sel_zipCode: "10010"
+        sel_zipCode: "10002"
       },
       () => {
         this.searchTextile()
