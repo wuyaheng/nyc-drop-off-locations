@@ -176,7 +176,7 @@ class App extends Component {
       <>
         <nav className="navbar navbar-light bg-dark">
           <span className="navbar-brand mb-0 text-white">
-          <h5>NYC Drop-Off Locations</h5>
+          <h5>NYC Drop-Off Locations Map</h5>
           </span>
         </nav>
         <div className="container-fluid mt-2">
