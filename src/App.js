@@ -16,7 +16,7 @@ class App extends Component {
   componentDidMount() {
     this.setState(
       {
-        sel_zipCode: "10002"
+        sel_zipCode: "10027"
       },
       () => {
         this.searchTextile()
@@ -182,9 +182,8 @@ class App extends Component {
         <div className="container-fluid mt-2">
           <div className="row">
             <div className="col-md-12">
-            <label htmlFor="form-control"><h5 className="pb-0 mb-0">Enter Zip Code Below</h5></label>
             <div className="input-group mb-2">
-              <input type="text" className="form-control" value={this.state.sel_zipCode} onChange={this.handleChange} 
+              <input type="text" className="form-control" onChange={this.handleChange} 
                     placeholder="Enter Another Zip Code" aria-label="Enter Another Zip Code" aria-describedby="basic-addon2"/>
               <div className="input-group-append">
                 <button className="btn btn-outline-secondary" type="button">Go!</button>
