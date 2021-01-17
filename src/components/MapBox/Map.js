@@ -10,7 +10,25 @@ export default (props) => {
       MAP_ID.setAttribute("id", "mapid");
       MAP_CONTAINER.appendChild(MAP_ID);
 
-      const mymap = L.map("mapid").setView([props.lat, props.lon], 15);
+      // Initialize all of the LayerGroups we'll be using
+      var layers = {
+        Leaf: new L.LayerGroup(),
+        Textile: new L.LayerGroup(),
+        Electronics: new L.LayerGroup(), 
+        FoodScrap: new L.LayerGroup(),
+        Pharmaceutical: new L.LayerGroup()
+      };
+
+
+      const mymap = L.map("mapid", {
+        layers: [
+          layers.Leaf,
+          layers.Textile,
+          layers.Electronics,
+          layers.FoodScrap,
+          layers.Pharmaceutical
+        ]
+      }).setView([props.lat, props.lon], 15);
 
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -24,15 +42,6 @@ export default (props) => {
           accessToken: process.env.REACT_APP_MAP_API_KEY,
         }
       ).addTo(mymap);
-
-      // Initialize all of the LayerGroups we'll be using
-      var layers = {
-        Leaf: new L.LayerGroup(),
-        Textile: new L.LayerGroup(),
-        Electronics: new L.LayerGroup(), 
-        FoodScrap: new L.LayerGroup(),
-        Pharmaceutical: new L.LayerGroup()
-      };
 
       // Create an overlays object to add to the layer control
       var overlays = {
