@@ -204,7 +204,7 @@ class App extends Component {
             <div class="row m-0 p-0">
               <div class="input-field col s6 pb-0 mb-0"> 
                 <i class="material-icons prefix">mode_edit</i>
-                <textarea id="icon_prefix2" class="materialize-textarea" onChange={this.handleChange}></textarea>
+                <textarea id="icon_prefix2" class="materialize-textarea mb-0 pb-0" onChange={this.handleChange}></textarea>
                 <label for="icon_prefix2">Enter Another Zip Code</label>
               </div>
             </div>
