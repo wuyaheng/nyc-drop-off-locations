@@ -149,20 +149,39 @@ class App extends Component {
     return Number(n) === n && n % 1 !== 0;
   }
 
+  handleChange = (event) => {
+    let zip = event.target.value.trim();
+    let isZip = zip.match(/(^\d{5}$)|(^\d{5}-\d{4}$)/);
+
+    if (isZip) {
+      this.setState(
+        {
+        sel_zipCode: event.target.value,
+        },
+        this.searchRestaurant
+        );
+    }
+   
+  };
 
   handleChange = (event) => {
-    this.setState(
-      {
-      sel_zipCode: event.target.value,
-      },
-      () => {
-        this.searchTextile()
-        this.searchFoodScrap()
-        this.searchElectronics()
-        this.searchPharmaceutical()
-        this.searchLeaf()
-      }
-      );
+    let zip = event.target.value.trim();
+    let isZip = zip.match(/(^\d{5}$)|(^\d{5}-\d{4}$)/);
+
+    if (isZip) {
+      this.setState(
+        {
+        sel_zipCode: event.target.value,
+        },
+        () => {
+          this.searchTextile()
+          this.searchFoodScrap()
+          this.searchElectronics()
+          this.searchPharmaceutical()
+          this.searchLeaf()
+        }
+        );
+    }
   };
 
 
@@ -174,24 +193,24 @@ class App extends Component {
       leaf } = this.state;
     return (
       <>
-        <nav className="navbar navbar-light bg-dark">
-          <span className="navbar-brand mb-0 text-white">
-          <h5>NYC Drop-Off Locations Map</h5>
+        <nav className="nav-wrapper">
+          <span className="brand-logo center">
+          NYC Drop-Off Locations
           </span>
         </nav>
         <div className="container-fluid mt-2">
-          <div className="row">
-            <div className="col-md-12">
-            <div className="input-group mb-2">
-              <input type="text" className="form-control" onChange={this.handleChange} 
-                    placeholder="Enter Another Zip Code" aria-label="Enter Another Zip Code" aria-describedby="basic-addon2"/>
-              <div className="input-group-append">
-                <button className="btn btn-outline-secondary" type="button">Go!</button>
+          <div class="row m-0 p-0">
+          <form class="col s12">
+            <div class="row m-0 p-0">
+              <div class="input-field col s6 pb-0 mb-0"> 
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea id="icon_prefix2" class="materialize-textarea" onChange={this.handleChange}></textarea>
+                <label for="icon_prefix2">Enter Another Zip Code</label>
               </div>
             </div>
-            </div>
-          </div>
-          <div className="row">
+          </form>
+        </div>
+          <div className="row m-0 p-0">
           <div className="col-md-12">
               <div className="card">
                 <MapBox results={{ textile, foodScrap, electronics, pharmaceutical, leaf }} /> 
