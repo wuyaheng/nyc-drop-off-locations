@@ -100,11 +100,11 @@ export default (props) => {
       info.onAdd = function() {
         var div = L.DomUtil.create("div", "legend");
         div.innerHTML += "<p><b>Drop-Off Categories</b></p>"
-        div.innerHTML += "<i class='fa fa-leaf awesome legendIcon'></i>Leaf<br/>"; 
-        div.innerHTML += "<i class='fa fa-tshirt awesome legendIcon'></i>Textile<br/>"; 
-        div.innerHTML += "<i class='fa fa-charging-station awesome legendIcon'></i>Electronics<br/>";
-        div.innerHTML += "<i class='fa fa-utensils awesome legendIcon'></i>Food Scrap<br/>";  
-        div.innerHTML += "<i class='fa fa-capsules awesome legendIcon'></i>Pharmaceutical<br/>";
+        div.innerHTML += "<span class='dot leaf'></span>Leaf<br/>"; 
+        div.innerHTML += "<span class='dot textile'></span>Textile<br/>"; 
+        div.innerHTML += "<span class='dot electronics'></span>Electronics<br/>";
+        div.innerHTML += "<span class='dot foodscrap'></span>Food Scrap<br/>";  
+        div.innerHTML += "<span class='dot pharmaceutical'></span>Pharmaceutical<br/>"; 
         return div;
       };
       // Add the info legend to the map
