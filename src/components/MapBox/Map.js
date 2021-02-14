@@ -112,23 +112,23 @@ export default (props) => {
 
       props.results.textile.forEach((pin) => L.marker([pin.latitude, pin.longitude],{icon: iconTextile})
       .addTo(layers.Textile)
-      .bindTooltip("<h6><b>Textile Drop-Off Location</b></h6><p><b>Name:</b> " + pin.vendor_name + "</p><p><b>Items Accepted:</b> " + pin.items_accepted + "</p><p><b>Phone:</b> " + pin.public_phone + "</p><p><b>Email:</b> " + pin.public_email + "</p><p><b>Address:</b> " + pin.address + ", New York, NY" + pin.zipcode + "</p>"));
+      .bindTooltip("<h6 class='p-0 m-0'><b>Textile Drop-Off Location</b></h6><p><b>Name:</b> " + pin.vendor_name + "</p><p><b>Items Accepted:</b> " + pin.items_accepted + "</p><p><b>Phone:</b> " + pin.public_phone + "</p><p><b>Email:</b> " + pin.public_email + "</p><p><b>Address:</b> " + pin.address + ", New York, NY" + pin.zipcode + "</p>"));
 
       props.results.foodScrap.forEach((pin) => L.marker([pin.latitude, pin.longitude],{icon: iconfoodScrap})
       .addTo(layers.FoodScrap)
-      .bindTooltip("<h6><b>Food Scrap Drop-Off Location</b></h6><p><b>Name:</b> " + pin.food_scrap_drop_off_site + "</p><p><b>Website:</b> " + pin.website + "</p><p><b>Address:</b> " + pin.location + "</p>"));
+      .bindTooltip("<h6 class='p-0 m-0'><b>Food Scrap Drop-Off Location</b></h6><p><b>Name:</b> " + pin.food_scrap_drop_off_site + "</p><p><b>Website:</b> " + pin.website + "</p><p><b>Address:</b> " + pin.location + "</p>"));
 
       props.results.electronics.forEach((pin) => L.marker([pin.latitude, pin.longitude],{icon: iconElectronics})
       .addTo(layers.Electronics)
-      .bindTooltip("<h6><b>Electronics Drop-Off Location</b></h6><p><b>Name:</b> " + pin.dropoff_sitename + "</p><p><b>Address:</b> " + pin.address +  ", New York, NY" + pin.zipcode + "</p>"));
+      .bindTooltip("<h6 class='p-0 m-0'><b>Electronics Drop-Off Location</b></h6><p><b>Name:</b> " + pin.dropoff_sitename + "</p><p><b>Address:</b> " + pin.address +  ", New York, NY" + pin.zipcode + "</p>"));
 
       props.results.pharmaceutical.forEach((pin) => L.marker([pin.latitude, pin.longitude],{icon: iconPharmaceutical})
       .addTo(layers.Pharmaceutical)
-      .bindTooltip("<h6><b>Pharmaceutical Drop-Off Location</b></h6><p><b>Name:</b> " + pin.drop_off_site_name + "</p><p><b>Address:</b> " + pin.address + "</p>")); 
+      .bindTooltip("<h6 class='p-0 m-0'><b>Pharmaceutical Drop-Off Location</b></h6><p><b>Name:</b> " + pin.drop_off_site_name + "</p><p><b>Address:</b> " + pin.address + "</p>")); 
 
       props.results.leaf.forEach((pin) => L.marker([pin.latitude, pin.longitude],{icon: iconLeaf})
       .addTo(layers.Leaf)
-      .bindTooltip("<h6><b>Leaf Drop-Off Location</b></h6><p><b>Name:</b> " + pin.site_name + "</p><p><b>Address:</b> " + pin.address + "</p>")); 
+      .bindTooltip("<h6 class='p-0 m-0'><b>Leaf Drop-Off Location</b></h6><p><b>Name:</b> " + pin.site_name + "</p><p><b>Address:</b> " + pin.address + "</p>")); 
     }
 
     return () => (MAP_CONTAINER.innerHTML = ""); 
