@@ -150,20 +150,6 @@ class App extends Component {
     return Number(n) === n && n % 1 !== 0;
   }
 
-  handleChange = (event) => {
-    let zip = event.target.value.trim();
-    let isZip = zip.match(/(^\d{5}$)|(^\d{5}-\d{4}$)/);
-
-    if (isZip) {
-      this.setState(
-        {
-        sel_zipCode: event.target.value,
-        },
-        this.searchRestaurant
-        );
-    }
-   
-  };
 
   handleChange = (event) => {
     let zip = event.target.value.trim();
@@ -187,11 +173,8 @@ class App extends Component {
 
 
   render() {
-    const {  textile,
-      foodScrap,
-      electronics,
-      pharmaceutical,
-      leaf } = this.state;
+    const {  textile, foodScrap, electronics, pharmaceutical, leaf } = this.state;
+
     return (
       <>
         <nav className="nav-wrapper">
@@ -199,18 +182,15 @@ class App extends Component {
           NYC Drop-Off Locations
           </span>
         </nav>
-        <div className="container-fluid mt-2">
-          <div class="row m-0 p-0">
-        <div class="col-md-3">
-        <TextBox results={{ textile, foodScrap, electronics, pharmaceutical, leaf }} />
-        </div>
-      <div class="col-md-9">
-          <div class="col s12">
-            <div class="row m-0 p-0">
-              <div class="input-field col s6 pb-0 mb-0"> 
-                <i class="material-icons prefix">mode_edit</i> 
-                <textarea id="icon_prefix2" class="materialize-textarea mb-0 pb-0" onChange={this.handleChange}></textarea>
-                <label for="icon_prefix2">Enter Another Zip Code</label>
+        <div className="container-fluid mt-2"> 
+          <div className="row m-0 p-0">
+      <div className="col-md-9">
+          <div className="col s12">
+            <div className="row m-0 p-0">
+              <div className="input-field col s6 pb-0 mb-0"> 
+                <i className="material-icons prefix">mode_edit</i> 
+                <textarea id="icon_prefix2" className="materialize-textarea mb-0 pb-0" onChange={this.handleChange}></textarea>
+                <label htmlFor="icon_prefix2">Enter Another Zip Code</label>
               </div>
             </div>
           </div>
@@ -220,6 +200,11 @@ class App extends Component {
               </div>
             </div>
         </div>
+
+        <div className="col-md-3 mt-4">
+        <TextBox results={{ textile, foodScrap, electronics, pharmaceutical, leaf }} /> 
+        </div>
+
         </div>
         </div>
       </>
