@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MapBox from "./components/MapBox/MapBox";
+import TextBox from "./components/TextBox/index";
 import axios from "axios"; 
 import "./App.css";
 
@@ -200,7 +201,11 @@ class App extends Component {
         </nav>
         <div className="container-fluid mt-2">
           <div class="row m-0 p-0">
-          <form class="col s12">
+        <div class="col-md-3">
+        <TextBox results={{ textile, foodScrap, electronics, pharmaceutical, leaf }} />
+        </div>
+      <div class="col-md-9">
+          <div class="col s12">
             <div class="row m-0 p-0">
               <div class="input-field col s6 pb-0 mb-0"> 
                 <i class="material-icons prefix">mode_edit</i> 
@@ -208,15 +213,14 @@ class App extends Component {
                 <label for="icon_prefix2">Enter Another Zip Code</label>
               </div>
             </div>
-          </form>
-        </div>
-          <div className="row m-0 p-0">
+          </div>
           <div className="col-md-12">
               <div className="card">
                 <MapBox results={{ textile, foodScrap, electronics, pharmaceutical, leaf }} /> 
               </div>
             </div>
-          </div>
+        </div>
+        </div>
         </div>
       </>
     );
