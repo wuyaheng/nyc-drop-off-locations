@@ -196,40 +196,39 @@ class App extends Component {
         <nav className="navbar navbar-light bg-light p-0">
               <h4 className="navbar-text p-0">
               NYC Drop-Off Locations
-              </h4>
+              </h4> 
           </nav>
 
-        <div className="container-fluid mt-2">
-          <div class="row m-0 p-0">
+        <div className="container-fluid">
+          <div className="row m-0 p-0">
 
 
-          <div class="col-md-3">
-           <div class="input-group mb-3">
-              <input type="text" class="form-control" onChange={this.handleChange} placeholder="Enter Another Zip Code" aria-label="Enter Another Zip Code" aria-describedby="button-addon2"/>
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Go</button>
+          <div className="col-md-3 mb-2"> 
+           <div className="input-group mb-3">
+              <input type="text" className="form-control" onChange={this.handleChange} placeholder="Enter Another Zip Code" aria-label="Enter Another Zip Code" aria-describedby="button-addon2"/>
             </div>
-            <div class="card">
-              <div class="card-body">
+            <div className="card">
+              <div className="card-body">
                 {this.state.leaf.length} leaf drop-off location(s)
               </div>
             </div>
-            <div class="card cardSpace">
-              <div class="card-body">
+            <div className="card cardSpace">
+              <div className="card-body">
               {this.state.textile.length} textile drop-off location(s)
               </div>
             </div>
-            <div class="card cardSpace">
-              <div class="card-body">
+            <div className="card cardSpace">
+              <div className="card-body">
               {this.state.electronics.length} electronics drop-off location(s)
               </div>
             </div>
-            <div class="card cardSpace">
-              <div class="card-body">
+            <div className="card cardSpace">
+              <div className="card-body">
               {this.state.foodScrap.length} food scrap drop-off location(s)
               </div>
             </div>
-            <div class="card cardSpace">
-              <div class="card-body">
+            <div className="card cardSpace">
+              <div className="card-body">
               {this.state.pharmaceutical.length} pharmaceutical drop-off location(s)
               </div>
             </div> 
@@ -238,7 +237,7 @@ class App extends Component {
 
         
       
-          <div className="col-md-9">
+          <div className="col-md-9 mb-2">
               <div className="card">
                 <MapBox results={{ textile, foodScrap, electronics, pharmaceutical, leaf }} /> 
               </div>
