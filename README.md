@@ -21,7 +21,7 @@ NYC Drop-Off Locations is a map that displays all textile, food scrap, leaf, pha
 Leaflet, JavaScript, Materialize, HTML, CSS
 
 ## Link
-https://nyc-drop-off-locations-map.netlify.app/
+https://nyc-drop-off-sites.netlify.app/
 
 ## Usage
 Enter zip code to find the nearest drop-off location
