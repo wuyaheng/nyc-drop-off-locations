@@ -58,35 +58,35 @@ export default (props) => {
 
       var iconTextile = L.divIcon({
 				className: 'custom-div-icon',
-        html: "<div style='background-color:#4281a4;' class='marker-pin'></div><i class='fa fa-tshirt awesome'>", 
+        html: "<div style='background-color:#4281a4;' class='marker-pin'></div><i class='fas fa-tshirt awesome'>", 
         iconSize: [30, 42],
         iconAnchor: [15, 42]
     });
 
       var iconfoodScrap = L.divIcon({
         className: 'custom-div-icon',
-        html: "<div style='background-color:#b2967d;' class='marker-pin'></div><i class='fa fa-utensils awesome'>", 
+        html: "<div style='background-color:#b2967d;' class='marker-pin'></div><i class='fas fa-utensils awesome'>", 
         iconSize: [30, 42],
         iconAnchor: [15, 42]
     });
 
       var iconElectronics = L.divIcon({
         className: 'custom-div-icon',
-        html: "<div style='background-color:#d80032;' class='marker-pin'></div><i class='fa fa-charging-station awesome'>", 
+        html: "<div style='background-color:#d80032;' class='marker-pin'></div><i class='fas fa-charging-station awesome'>", 
         iconSize: [30, 42], 
         iconAnchor: [15, 42]
     });
 
     var iconPharmaceutical = L.divIcon({
       className: 'custom-div-icon',
-      html: "<div style='background-color:#f4acb7;' class='marker-pin'></div><i class='fa fa-capsules awesome'>", 
+      html: "<div style='background-color:#f4acb7;' class='marker-pin'></div><i class='fas fa-capsules awesome'>", 
       iconSize: [30, 42], 
       iconAnchor: [15, 42]
   });
 
   var iconLeaf = L.divIcon({
     className: 'custom-div-icon',
-    html: "<div style='background-color:#70a288;' class='marker-pin'></div><i class='fa fa-leaf awesome'>", 
+    html: "<div style='background-color:#70a288;' class='marker-pin'></div><i class='fas fa-leaf awesome'>", 
     iconSize: [30, 42], 
     iconAnchor: [15, 42]
 });
