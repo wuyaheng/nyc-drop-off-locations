@@ -99,12 +99,12 @@ export default (props) => {
       // When the layer control is added, insert a div with the class of "legend"
       info.onAdd = function() {
         var div = L.DomUtil.create("div", "legend");
-        div.innerHTML += "<p><b>Drop-Off Categories</b></p>"
-        div.innerHTML += "<span class='dot leaf'></span>Leaf<br/>"; 
-        div.innerHTML += "<span class='dot textile'></span>Textile<br/>"; 
-        div.innerHTML += "<span class='dot electronics'></span>Electronics<br/>";
-        div.innerHTML += "<span class='dot foodscrap'></span>Food Scrap<br/>";  
-        div.innerHTML += "<span class='dot pharmaceutical'></span>Pharmaceutical<br/>"; 
+        div.innerHTML += "<p><span>Drop-Off Categories</span></p>"
+        div.innerHTML += "<p><i class='fas fa-leaf awesome leaf'><span> Leaf</span></p>"; 
+        div.innerHTML += "<p><i class='fas fa-tshirt awesome textile'><span> Textile</span></p>"; 
+        div.innerHTML += "<p><i class='fas fa-charging-station awesome electronics'><span> Electronics</span></p>";
+        div.innerHTML += "<p><i class='fas fa-utensils awesome foodscrap'><span> Food Scrap</span></p>";  
+        div.innerHTML += "<p><i class='fas fa-capsules awesome pharmaceutical'><span> Pharmaceutical</span></p>"; 
         return div;
       };
       // Add the info legend to the map

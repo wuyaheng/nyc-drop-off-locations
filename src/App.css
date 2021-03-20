@@ -39,7 +39,6 @@ p {
   width: 30px;
   height: 30px;
   border-radius: 50% 50% 50% 0;
-  background: #c30b82;
   position: absolute;
   transform: rotate(-45deg);
   left: 50%;
@@ -94,33 +93,28 @@ p {
   margin: 0 auto;
 }
 
-.dot {
-  height: 10px;
-  width: 10px;
-  margin-right: 0.2rem;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
+span {
+  color: #212529;
 }
 
-.textile {
-  background-color: #4281a4;
+i.textile {
+  color: #4281a4;
 }
 
 .leaf {
-  background-color: #70a288;
+  color: #70a288;
 }
 
 .foodscrap {
-  background-color: #b2967d;
+  color: #b2967d;
 }
 
 .electronics {
-  background-color: #d80032; 
+  color: #d80032; 
 }
 
 .pharmaceutical {
-  background-color: #f4acb7;
+  color: #f4acb7;
 }
 
 
