@@ -205,7 +205,7 @@ class App extends Component {
 
           <div className="col-md-3 mb-2"> 
            <div className="input-group mb-3">
-              <input type="text" className="form-control" onChange={this.handleChange} placeholder="Enter Another Zip Code" aria-label="Enter Another Zip Code" aria-describedby="button-addon2"/>
+              <input type="text" className="form-control" onChange={this.handleChange} placeholder="Enter Another NYC Zip Code" aria-label="Enter Another Zip Code" aria-describedby="button-addon2"/>
             </div>
             <div className="card">
               <div className="card-body">
