@@ -203,17 +203,39 @@ class App extends Component {
           <div class="row m-0 p-0">
 
 
-          <form class="col-md-3">
-            <div class="row m-0 p-0">
-
+          <div class="col-md-3">
            <div class="input-group mb-3">
               <input type="text" class="form-control" onChange={this.handleChange} placeholder="Enter Another Zip Code" aria-label="Enter Another Zip Code" aria-describedby="button-addon2"/>
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">Go</button>
             </div>
-
-
+            <div class="card">
+              <div class="card-body">
+                {this.state.leaf.length} leaf drop-off location(s)
+              </div>
             </div>
-          </form>
+            <div class="card cardSpace">
+              <div class="card-body">
+              {this.state.textile.length} textile drop-off location(s)
+              </div>
+            </div>
+            <div class="card cardSpace">
+              <div class="card-body">
+              {this.state.electronics.length} electronics drop-off location(s)
+              </div>
+            </div>
+            <div class="card cardSpace">
+              <div class="card-body">
+              {this.state.foodScrap.length} food scrap drop-off location(s)
+              </div>
+            </div>
+            <div class="card cardSpace">
+              <div class="card-body">
+              {this.state.pharmaceutical.length} pharmaceutical drop-off location(s)
+              </div>
+            </div> 
+          </div>
+
+
         
       
           <div className="col-md-9">

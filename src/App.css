@@ -4,6 +4,10 @@ nav {
   line-height: 50px !important;
 }
 
+.navbar {
+  background-color: white !important;
+}
+
 #mapid {
   height: 76vh;
 }
@@ -123,11 +127,16 @@ i.textile {
   font-size: 2rem;
 }
 
-
+.cardSpace {
+  margin-top: 1.5rem !important;
+}
 
 @media only screen and (max-width: 768px) {
   .brand-logo {
     font-size: 16px !important;
     font-weight: 600 !important;
+  }
+  .cardSpace {
+    margin-top: 0.5rem !important; 
   }
 }
