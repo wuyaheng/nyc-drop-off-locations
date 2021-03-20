@@ -53,7 +53,7 @@ export default (props) => {
       };
 
       // Create a control for our layers, add our overlay layers to it
-      L.control.layers(null, overlays).addTo(mymap);
+      L.control.layers(null, overlays, {collapsed:false}).addTo(mymap);
  
 
       var iconTextile = L.divIcon({

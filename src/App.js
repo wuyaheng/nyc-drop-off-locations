@@ -193,30 +193,39 @@ class App extends Component {
       leaf } = this.state;
     return (
       <>
-        <nav className="nav-wrapper">
-          <span className="brand-logo center">
-          NYC Drop-Off Locations
-          </span>
-        </nav>
+        <nav className="navbar navbar-light bg-light p-0">
+              <h4 className="navbar-text p-0">
+              NYC Drop-Off Locations
+              </h4>
+          </nav>
+
         <div className="container-fluid mt-2">
           <div class="row m-0 p-0">
-          <form class="col s12">
+
+
+          <form class="col-md-3">
             <div class="row m-0 p-0">
-              <div class="input-field col s6 pb-0 mb-0"> 
-                <i class="material-icons prefix">mode_edit</i>
-                <textarea id="icon_prefix2" class="materialize-textarea" onChange={this.handleChange}></textarea>
-                <label for="icon_prefix2">Enter Another Zip Code</label>
-              </div>
+
+           <div class="input-group mb-3">
+              <input type="text" class="form-control" onChange={this.handleChange} placeholder="Enter Another Zip Code" aria-label="Enter Another Zip Code" aria-describedby="button-addon2"/>
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Go</button>
+            </div>
+
+
             </div>
           </form>
-        </div>
-          <div className="row m-0 p-0">
-          <div className="col-md-12">
+        
+      
+          <div className="col-md-9">
               <div className="card">
                 <MapBox results={{ textile, foodScrap, electronics, pharmaceutical, leaf }} /> 
               </div>
             </div>
-          </div>
+       </div>
+
+
+
+
         </div>
       </>
     );
