@@ -9,11 +9,11 @@ nav {
 }
 
 #mapid {
-  height: 76vh;
+  height: 550px;
 }
 
 #map-container {
-  height: 76vh;
+  height: 550px;
 }
 
 button:focus,
@@ -128,7 +128,7 @@ i.textile {
 }
 
 .cardSpace {
-  margin-top: 1.5rem !important;
+  margin-top: 1rem !important;
 }
 
 @media only screen and (max-width: 768px) {
